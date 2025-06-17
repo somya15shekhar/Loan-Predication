@@ -30,6 +30,10 @@ def generate_predictions(data_input):
     """
     # Convert input data to a DataFrame
     data = pd.DataFrame(data_input)
+
+    print("Data columns:", data.columns.tolist())
+    print("Expected columns:", config.FEATURES)
+
     
     # Use the pipeline to predict the target variable
     pred = classification_pipeline.predict(data[config.FEATURES])
@@ -56,8 +60,23 @@ def generate_predictions(data_input):
 #     # result = {"Predictions": output}
 #     return output
 
+
+    
 if __name__ == '__main__':
-    # Example usage: generate predictions with sample data
-    sample_data = [{'Feature1': 100, 'Feature2': 200}, {'Feature1': 150, 'Feature2': 250}]
+    # Sample data with correct feature names and sample values
+    sample_data = [{
+        'Gender': 'Male',
+        'Married': 'Yes',
+        'Dependents': '1',
+        'Education': 'Graduate',
+        'Self_Employed': 'No',
+        'ApplicantIncome': 5000,
+        'CoapplicantIncome': 1500,
+        'LoanAmount': 200,
+        'Loan_Amount_Term': 360,
+        'Credit_History': 1.0,
+        'Property_Area': 'Urban'
+    }]
+
     predictions = generate_predictions(sample_data)
     print(predictions)

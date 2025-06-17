@@ -14,7 +14,7 @@ TRAIN_FILE = 'train.csv'
 TEST_FILE = 'test.csv'
 
 # Define the name of the model file to be saved
-MODEL_NAME = 'classification.pkl'
+MODEL_NAME = 'final_model.pkl'
 
 # Define the path to the directory where the trained models will be saved
 SAVE_MODEL_PATH = os.path.join(PACKAGE_ROOT, 'trained_models')
